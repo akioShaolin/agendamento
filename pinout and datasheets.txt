@@ -1,0 +1,20 @@
+GPIO14; HSPI_CLK 	[5]
+5V			
+3.3V			[8]
+GND			[9]
+GND
+GPIO0			[12]
+UART0_RXD; GPIO3 	[15]
+UART0_TXD; GPIO1 	[16]
+
+
+gpio13 --> 13(4066)
+
+https://www.st.com/resource/en/datasheet/m24m02-dr.pdf
+https://www.mikrocontroller.net/attachment/338570/Ai-thinker_ESP-07_WIFI_Module-EN.pdf
+https://www.ti.com/lit/ds/symlink/sn65176b.pdf?ts=1758779005311
+https://www.mouser.com/datasheet/2/408/74HC4066D_datasheet_en_20201124-1128579.pdf?srsltid=AfmBOopPH4P0KZsBcP_d3EdqQbsrVVmKYe_gljYSu7l02SnsnxJKakCJ
+https://www.analog.com/media/en/technical-documentation/data-sheets/ds1307.pdf
+
+d3ba708e
+604800s

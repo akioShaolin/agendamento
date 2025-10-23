@@ -1,0 +1,935 @@
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tens��o AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
+TX: 01 03 20 00 00 01 8F CA 
+
+RX: 01 03 02 00 00 B8 44 
+CRC OK
+Dados: 00 00 
+TX: 01 03 20 02 00 01 2E 0A 
+
+RX: 01 03 02 02 00 B9 24 
+CRC OK
+Dados: 02 00 
+TX: 01 03 20 04 00 01 CE 0B 
+
+RX: 01 03 02 04 00 BA 84 
+CRC OK
+Dados: 04 00 
+TX: 01 03 20 06 00 01 6F CB 
+
+RX: 01 03 02 06 00 BB E4 
+CRC OK
+Dados: 06 00 
+TX: 01 03 20 08 00 01 0E 08 
+
+RX: 01 03 02 08 00 BF 84 
+CRC OK
+Dados: 08 00 
+TX: 01 03 20 0A 00 01 AF C8 
+
+RX: 01 03 02 0A 00 BE E4 
+CRC OK
+Dados: 0A 00 
+TX: 01 03 20 0C 00 01 4F C9 
+
+RX: 01 03 02 0C 00 BD 44 
+CRC OK
+Dados: 0C 00 
+TX: 01 03 20 0E 00 01 EE 09 
+
+RX: 01 03 02 0E 00 BC 24 
+CRC OK
+Dados: 0E 00 
+TX: 01 03 20 10 00 01 8E 0F 
+
+RX: 01 03 02 10 00 B5 84 
+CRC OK
+Dados: 10 00 
+TX: 01 03 20 12 00 01 2F CF 
+
+RX: 01 03 02 12 00 B4 E4 
+CRC OK
+Dados: 12 00 
+TX: 01 03 20 14 00 01 CF CE 
+
+RX: 01 03 02 14 00 B7 44 
+CRC OK
+Dados: 14 00 
+TX: 01 03 20 16 00 01 6E 0E 
+
+RX: 01 03 02 16 00 B6 24 
+CRC OK
+Dados: 16 00 
+TX: 01 03 20 18 00 01 0F CD 
+
+RX: 01 03 02 18 00 B2 44 
+CRC OK
+Dados: 18 00 
+TX: 01 03 20 44 00 01 CF DF 
+
+RX: 01 03 02 44 00 8B 44 
+CRC OK
+Dados: 44 00 
+Tensão AB: 0.0 V
+Tensão BC: 51.2 V
+Tensão CA: 102.4 V
+Tensão A: 153.6 V
+Tensão B: 204.8 V
+Tensão C: 256.0 V
+Corrente A: 307.2 A
+Corrente B: 358.4 A
+Corrente C: 409.6 A
+Potência Total: 460.8 W
+Potência A: 512.0 W
+Potência B: 563.2 W
+Potência C: 614.4 W
+Frequência: 1740.8 Hz
+
