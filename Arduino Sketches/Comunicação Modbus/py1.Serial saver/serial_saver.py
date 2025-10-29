@@ -113,7 +113,7 @@ def timestamp_filename(prefix="data", ext="txt"):
 def main():
     parser = argparse.ArgumentParser(description="Ler porta COM e salvar buffer via comando.")
     parser.add_argument("port", nargs="?", help="Porta serial (ex: COM6 ou /dev/ttyUSB0). Se omitido, será listado.")
-    parser.add_argument("baud", nargs="?", type=int, default=9600, help="Baud rate (padrão 9600).")
+    parser.add_argument("baud", nargs="?", type=int, default=115200, help="Baud rate (padrão 9600).")
     parser.add_argument("--timeout", type=float, default=0.1, help="Timeout de leitura (segundos).")
     args = parser.parse_args()
 
