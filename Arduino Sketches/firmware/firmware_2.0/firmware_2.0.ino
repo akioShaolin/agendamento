@@ -656,7 +656,7 @@ void setup() {
 
   // Inicia a comunicação serial para depuração (SoftwareSerial) e para Modbus (HardwareSerial).
   Serial.begin(RS485_BAUD); 
-  Debug.begin(9600); // Taxa de baud para o monitor serial de depuração.
+  Debug.begin(115000); // Taxa de baud para o monitor serial de depuração.
 
   // Início do barramento I2C
   Wire.begin(4, 5); // SDA = GPIO4, SCL = GPIO5

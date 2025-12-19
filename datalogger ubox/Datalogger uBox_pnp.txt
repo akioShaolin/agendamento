@@ -1,0 +1,18 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=Datalogger uBox
+*Date=09:36:38
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;rj45-8;52.5639;-41.1766;0;Bottom;U1
+2;;SO16 [SMD];33.6155;-38.323;90;Top;U2
+3;100nF;100 mil [THT, multilayer];81.1389;-44.0266;0;Bottom;C1

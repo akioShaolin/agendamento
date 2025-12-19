@@ -447,7 +447,6 @@ void checkPrograms(DateTime now) {
   uint8_t activeProgram = 0; // 0 = default
 
   uint8_t rtcDow = now.dayOfTheWeek(); // 0 - Domingo, 6 - Sábado
-  rtcDow = (rtcDow == 0) ? 7 : rtcDow; // converte para 1 - Segunda, 7 - Domingo
 
   // Percorre todos os programas da PROGMEM
   for (int i = 0; i < NUM_PROGRAMS; i++) {

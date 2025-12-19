@@ -1,0 +1,59 @@
+	W	R
+C34F	-472	6144
+C350	85	147
+C351	1000	0
+C352	0	157
+C353	85	150
+C354	207	0
+C355	1000	1000
+C356	85	59
+C357	30	-28265
+C358	0	
+
+
+	W	R
+C34F	-470	6144
+C350	85	146
+C351	1000	0
+C352	0	157
+C353	85	149
+C354	207	0
+C355	1000	1000
+C356	85	59
+C357	30	-28265
+C368	0	
+
+
+	Master
+C34F	(Controle de Potência Ativa [SIGNED])
+C350	Modo de Funcionamento
+C351	Fator de Potencia	[SIGNED]
+C352	% Potência Reativa	[SIGNED]
+C353	
+C354	
+C355	(Potencia Nominal do Inversor)
+C356	
+C357	
+C358	
+
+--Modo de Funcionamento--
+
+0055	0101 0101	Potencia ativa apenas
+00A1	1010 0001	Power Factor Enable
+00A2	1010 0010	Set Reative Power Enable
+
+
+	Slave
+C34F	Status			
+C350	Potência Ativa		[kW]
+C351	Potência Reativa	[kVAr]
+C352	Potência FV		[kW]
+C353	Potência Aparente	[kVA]
+C354	
+C355	(Potencia do Inversor)	[kW]
+C356	Energia Acumula (H)	[kWh]
+C357	Energia Acumulada (L)	[kWh]
+
+--Status--
+
+6144 - OK

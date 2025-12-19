@@ -47,7 +47,7 @@ void sniff() {
     
     // Se a trama anterior terminou, ou se estamos começando uma nova
     if (!inFrame) {
-      time = millis() / 1000;
+      time = (float)millis() / 1000;
       DebugSerial.printf("%5.3f [RX] ", time);
       inFrame = true;
     }
