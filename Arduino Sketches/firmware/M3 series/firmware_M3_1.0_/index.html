@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração Programada</title>
+    <style>
+        :root {
+            --bg: #f2f2f2;
+            --card: #ffffff;
+            --primary: #1976d2;
+            --text: #333;
+            --border: #ddd;
+            --console-bg: #111;
+            --console-text: #0f0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            padding: 20px;
+            color: var(--text);
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 420px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .inputs input, select {
+            width: 200px;
+            padding: 5px;
+            margin: 3px;
+            text-align: left;
+        }
+
+        button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 20px 0;
+        }
+
+        /* ===== CONSOLE ===== */
+        .console-container {
+            max-width: 420px;
+            margin: 15px auto 0 auto;
+        }
+
+        .console-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #console {
+            background: var(--console-bg);
+            color: var(--console-text);
+            font-family: Consolas, monospace;
+            font-size: 0.8em;
+            padding: 10px;
+            border-radius: 8px;
+            height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Geração Programada</h2>
+        <h3>Configurações da Rede RS485 e Inversor</h3>
+        <div class="inputs">
+            <div class="label">ID do Inversor:</div>
+            <input id="slaveId" type="number" value="1" min="1" max="247" />
+            <div class="label">Potência nominal do Inversor (kW):</div>
+            <input id="pot_inv" type="text" value="75.0" min="0.0" max="250.0" />
+            <div class="label">Baud Rate:</div>
+            <!-- Input combobox with predefined values: RS485 baud rate:  1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200;-->
+            <select id="baudRate" class="inputs">
+                <option value="0">1200</option>
+                <option value="1">2400</option>
+                <option value="2">4800</option>
+                <option value="3" selected>9600</option>
+                <option value="4">19200</option>
+                <option value="5">38400</option>
+                <option value="6">57600</option>
+                <option value="7">115200</option>
+            </select>
+        </div>
+        <hr />
+        <p id="time">--/--/---- --:--:--</p>
+        <button onclick="ajustar()">Ajustar RTC</button>
+        <!--
+        <h3>Ajustar RTC</h3>
+        <input id="d" placeholder="DD" size="2">
+        <input id="m" placeholder="MM" size="2">
+        <input id="y" placeholder="AAAA" size="4"><br><br>
+        <input id="hh" placeholder="HH" size="2">
+        <input id="mm" placeholder="MM" size="2">
+        <input id="ss" placeholder="SS" size="2"><br><br>
+        -->
+        <hr />   
+        <h3>Salvar Logs:</h3>
+        <div class="inputs">
+            <input id="fileName" type="text" value="logs.txt" />
+            <button onclick="saveFile()">Salvar</button>
+        </div>
+        <hr />
+
+        <div class="console-container">
+            <div class="console-title">Console:</div>
+            <div id="console">Logs<br></div>
+        </div>
+    </div>
+    <script>
+        function beginScan() {};
+        function stopScan() {};
+        function saveFile() {};
+        function adicionarLog(msg) {};
+
+        const ws = new WebSocket("ws://192.168.4.1:81/");
+
+        ws.onopen = () => console.log("Conectado ao WebSocket");
+        ws.onerror = (e) => console.log("Erro no WebSocket: ", e);
+        ws.onclose = () => console.log("WebSocket desconectado");
+
+        ws.onmessage = (e) => {
+
+            if (e.data.startsWith("LOG: ")) {
+                console.log(e.data.substring(5));
+                return;
+            }
+
+            if (e.data.startsWith("ERR: ")) {
+                console.error(e.data.substring(5));
+                return;
+            }
+
+            if (e.data === "busy") {
+                busy = true;
+                window.console.warn("Dispositivo ocupado. Tente novamente mais tarde.");
+                return;
+            }
+
+            if (e.data.startsWith("DATA: ")) {
+                const content = e.data.substring(6);
+                
+                let d;
+                try {
+                    d = JSON.parse(content);
+                } catch (error) {
+                    console.error("Erro ao analisar JSON:", error);
+                    window.error("Erro ao analisar dados recebidos.");
+                    return;
+                }
+
+                adicionarLog(`${d.register},${d.value}`);
+                return;
+            }
+
+            if (e.data === "end-scan") {
+                busy = false;
+                alert("Scan concluído.");
+                return;
+            }
+
+        }
+
+        let busy = false;
+
+        function beginScan() {
+            const slaveId = document.getElementById('slaveId');
+            const startRegister = document.getElementById('startRegister');
+            const endRegister = document.getElementById('endRegister');
+            const consoleDiv = document.getElementById('console');
+
+            slaveId.disabled = true;
+            startRegister.disabled = true;
+            endRegister.disabled = true;
+            consoleDiv.innerHTML = "Registrador,Valor<br>";
+
+            ws.send(JSON.stringify({
+                action: 'begin-scan',
+                slaveId: parseInt(slaveId.value),
+                startRegister: parseInt(startRegister.value),
+                endRegister: parseInt(endRegister.value)
+            }));
+        }
+
+        function stopScan() {
+            const slaveId = document.getElementById('slaveId');
+            const startRegister = document.getElementById('startRegister');
+            const endRegister = document.getElementById('endRegister');
+
+            slaveId.disabled = false;
+            startRegister.disabled = false;
+            endRegister.disabled = false;
+            ws.send(JSON.stringify({ action: 'stop-scan' }));
+        }
+
+        function saveFile() {
+            let fileName = document.getElementById('fileName').value;
+            // Código para salvar o arquivo no dispositivo do usuário sem utilizar o console
+            let content = document.getElementById('console').innerText;
+            let blob = new Blob([content], { type: 'text/csv' });
+            let link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function adicionarLog(msg) {
+            const consoleDiv = document.getElementById('console');
+
+            consoleDiv.innerHTML += `${msg}\n`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+        console.log("Página carregada. Atualizando em 5 segundos...");
+
+        setTimeout(function() {
+            window.location.reload(true);
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -383,65 +383,6 @@ bool isNaNValue(uint16_t value, const char* modelType) {
   return false; // Tipo de modelo desconhecido ou não aplicável para NaN de 16 bits
 }
 
-//--- Comandos de leitura e escrita na memoria RAM do RTC ---
-byte r_mem(byte address) {
-  byte data = 0xFF; //Valor padrão em caso de falha
-  bool success = false;
-
-  for (uint8_t attempt = 0; attempt < I2C_MAX_RETRIES && !success; attempt++) {
-    Wire.beginTransmission(I2C_ADDR_RTC);
-    Wire.write(address);
-    uint8_t status = Wire.endTransmission(false); // false = mantém barramento ativo
-
-    if (status != 0) {
-      delay(2);
-      continue; //erro de comuncicação, tenta de novo
-    }
-
-    // Solicitação 1 byte e espera resposta
-    uint32_t start = millis();
-    Wire.requestFrom((int)I2C_ADDR_RTC, 1); //Solicita 1 byte do DS1307
-    while (!Wire.available() && millis() - start < I2C_TIMEOUT_MS) yield();
-    if (Wire.available()) {
-      data = Wire.read();
-      success = true;
-    }
-    else {
-      delay(2); //Pausa antes de retry
-    }
-  }
-  
-  //Se falhar, comunica o debug
-  if (!success) {
-    Debug.printf("[I2C][READ] Falha no endereço 0x%02X após %u tentativas\n", address, I2C_MAX_RETRIES);
-  }
-  return data;
-}
-
-void w_mem(byte address, byte data) {
-  bool success = false;
-
-  for (uint8_t attempt = 0; attempt < I2C_MAX_RETRIES && !success; attempt++) {
-
-    Wire.beginTransmission(I2C_ADDR_RTC);
-    Wire.write(address);
-    Wire.write(data);
-    uint8_t status = Wire.endTransmission();  //encerra transmissão
-
-    if (status == 0) {
-        success == true;
-    }
-    else {
-      Debug.printf("[I2C][WRITE] Erro (%u) ao escrever 0x%20X em 0x%20X\n", status, data, address);
-      delay(5); //Pausa antes do retry
-    }
-  }
-
-  if (!success) {
-    Debug.printf("[I2C][WRITE] Falha definitiva no endereço 0x%02X\n", address);
-  }
-}
-
 Program currentProgram;
 void checkPrograms(DateTime now) {
   uint8_t activeProgram = 0; // 0 = default
@@ -517,7 +458,7 @@ void setup() {
 
   // Inicia a comunicação serial para depuração (SoftwareSerial) e para Modbus (HardwareSerial).
   Serial.begin(RS485_BAUD); 
-  Debug.begin(9600); // Taxa de baud para o monitor serial de depuração.
+  Debug.begin(115200); // Taxa de baud para o monitor serial de depuração.
 
   // Início do barramento I2C
   Wire.begin(4, 5); // SDA = GPIO4, SCL = GPIO5
@@ -569,18 +510,9 @@ void setup() {
   // Variáveis armazenadas na RAM para o caso o RTC falhar
   DateTime now = rtc.now();
 
-  int s = now.second();
-  int m = now.minute();
-  int h = now.hour();
-  int d = now.dayOfTheWeek();
-
-  //      0 Para Dom: 00:00:00
-  // 604799 para Sab: 23:59:59
-  sec_time = s + m * 60 + h * 3600 + (d - 1) * 86400;
-
   // --- Configuração do Timer1 hardware (ESP8266) ---
   ticker.attach(1.0, onTick); //Interrupção a cada 1 segundo
-  Serial.println("Iniciado. Pressione o botão para ajustar o RTC.");
+  Serial.println("Iniciado.");
 }
 
 void loop() {
@@ -595,59 +527,4 @@ void loop() {
     checkPrograms(now);
     Debug.printf("%02d:%02d:%02d (%d)\n", now.hour(), now.minute(), now.second(), now.dayOfTheWeek());
   }
-}/*
-    // Verificação da potência do inversor após ajuste. No caso de não estar o mesmo do valor setado, envia o ajuste outra vez
-    
-    // Adiciona a requisição de leitura à fila
-    if (!enqueueRequest(SLAVE_1_ID, HR_ACT_PWR_OUT, READ_REG_COUNT, 0x03)) {
-      Debug.println(F("[Modbus][Erro] Nao foi possivel adicionar requisicao de leitura a fila."));
-    }
-    // Processa a fila de requisições
-    if (queueHead != queueTail) { // Se a fila não estiver vazia
-      ModbusRequest& currentRequest = requestQueue[queueHead];
-
-      // Se a requisição ainda não foi enviada ou se é hora de re-tentar
-      if (currentRequest.lastAttemptTime == 0 || (millis() - currentRequest.lastAttemptTime >= (currentRequest.functionCode == 0x06 ? WRITE_RETRY_DELAY_MS : READ_RETRY_DELAY_MS))) {
-        currentRequest.lastAttemptTime = millis();
-        currentRequest.retriesLeft--;
-
-        Debug.printf("Processando requisicao da fila (ID: %d, End: %d, Func: 0x%02X). Tentativas restantes: %d\n", 
-                    currentRequest.slaveId, currentRequest.regAddr, currentRequest.functionCode, currentRequest.retriesLeft);
-
-        ModbusResponseStatus status;
-        uint16_t readValues[READ_REG_COUNT]; // Buffer temporário para leitura
-
-        if (currentRequest.functionCode == 0x03) { // Requisição de Leitura
-          sendModbusRequest(currentRequest.slaveId, currentRequest.functionCode, currentRequest.regAddr, currentRequest.numRegs);
-          status = receiveResponse(currentRequest.slaveId, currentRequest.functionCode, readValues, currentRequest.numRegs);
-          if (status == RESPONSE_SUCCESS) {
-            Debug.printf("Leitura da fila bem-sucedida para Escravo ID %d.\n", currentRequest.slaveId);
-            // Aqui você pode processar os valores lidos (readValues)
-            /*Program p = 
-            if (readValues[i] > p.power/100 + 1) {
-              activateProgram(p);
-            }*//*
-            for (int i = 0; i < currentRequest.numRegs; i++) {
-              Debug.printf("  Lido Reg[%d]: %d. Eh NaN? %s\n", currentRequest.regAddr + i, readValues[i], isNaNValue(readValues[i], "Int16") ? "SIM" : "NAO");
-            }
-            
-            dequeueRequest(); // Remove da fila se bem-sucedida
-          } else if (currentRequest.retriesLeft == 0) {
-            Debug.printf("Leitura da fila falhou para Escravo ID %d apos todas as tentativas.\n", currentRequest.slaveId);
-            dequeueRequest(); // Remove da fila se todas as tentativas falharam
-          }
-        } else if (currentRequest.functionCode == 0x06) { // Requisição de Escrita
-          sendModbusRequest(currentRequest.slaveId, currentRequest.functionCode, currentRequest.regAddr, currentRequest.value);
-          status = receiveResponse(currentRequest.slaveId, currentRequest.functionCode);
-          if (status == RESPONSE_SUCCESS) {
-            Debug.printf("Escrita da fila bem-sucedida para Escravo ID %d.\n", currentRequest.slaveId);
-            dequeueRequest(); // Remove da fila se bem-sucedida
-          } else if (currentRequest.retriesLeft == 0) {
-            Debug.printf("Escrita da fila falhou para Escravo ID %d apos todas as tentativas.\n", currentRequest.slaveId);
-            dequeueRequest(); // Remove da fila se todas as tentativas falharam
-          }
-        }
-      }
-    }
-  }
-}*/
+}

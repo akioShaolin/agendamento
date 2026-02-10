@@ -1,0 +1,121 @@
+Register Size: 1, 2, 4, 8, 16 words
+-- -| -- -| -- -- -- -| -- -- -- -- -- -- -- -| -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -| -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -|
+---|---|-------|---------------|-------------------------------|---------------------------------------------------------------|
+
+request: 01 03 9C 40 00 0C 6A 4B
+
+ ------------------------------------------ Header ----------------------------------------------------
+01													Slave: 1
+03													Function: 03
+8C													Qty Bytes: 140
+ ------------------------------------------ Payload----------------------------------------------------
+53 75 6E 53  												SunS
+00 01 													ID Sunspec: 1
+00 42													66 Words
+46 4F 58 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 	FOX
+53 49 57 34 30 30 47 20 54 30 37 35 20 57 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 	SIW400G T075 W0
+52 4B 37 35 33 00 00 00 00 00 00 00 00 00 00 00 							RK753
+31 2E 31 2E 30 62 2E 61 00 00 00 00 00 00 00 00								1.1.0b.a
+4A 30 52 4B 37 35 33 30 33 43 4C 47 31 32 38 00 00 00 00 00 00 00 00 00	00 00 00 00 00 00 00 00 	J0RK75303CLG128
+00 01													Slave ID: 1
+FF FF													NaN
+ -------------------------------------------- CRC -----------------------------------------------------
+9A A1													CRC
+
+
+
+8 campos
+reg 40000
+id 1
+
+
+707 - DER AC Measuremente
+
+
+fetch("http://192.168.7.1/api/v1/sunspec/data?addr=1&id=701", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+    "cache-control": "no-cache",
+    "pragma": "no-cache"
+  },
+  "referrer": "http://192.168.7.1/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+id 701
+reg 40070
+
+---|---|-------|---------------|-------------------------------|---------------------------------------------------------------|
+02BD00990002000100060000000100000000000000000000000000000000000000052000018B000000000000000000000000000000000000FFFFFFFFFFFE0002FFFD000200020002FFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+7CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+22 campos
+
+
+
+
+
+
+fetch("http://192.168.7.1/api/v1/sunspec/data?addr=1&id=65012", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+    "cache-control": "no-cache",
+    "pragma": "no-cache"
+  },
+  "referrer": "http://192.168.7.1/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+9 campos
+id 65012
+reg 42766
+
+request: 01 03 A7 0E 00 0A 
+
+ ------------------------------------------ Header ----------------------------------------------------
+01													Slave ID: 1
+03													Function: 03
+3C													Qty Bytes: 60
+ ------------------------------------------ Payload----------------------------------------------------
+FD F4													ID Sunspec: 65012
+00 1C													28 Words
+07 D0													2000 [year]
+00 05													5 [month]
+00 1E													30 [day]
+00 14													20 [hour]
+00 32													50 [minute]
+00 13													19 [second]
+00 CF													Boot
+00 44													68 [Country / region]
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+FF FF													NaN
+ -------------------------------------------- CRC -----------------------------------------------------
+B8 ED													CRC
+
+

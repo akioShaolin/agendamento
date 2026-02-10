@@ -1,10 +1,11 @@
+// Declaração de Bibliotecas
 #include <Arduino.h>
 #include <Wire.h>
 #include "RTClib.h"
 #include <Ticker.h>
 
-// Esse sketch me fez odiar o Watchdog Timer
-
+// --- Configurações de Hardware e Pinos ---
+// Inicialização do RTC, timer por hardware
 RTC_DS1307 rtc;
 Ticker ticker;
 
