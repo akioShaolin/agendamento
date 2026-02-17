@@ -466,7 +466,10 @@
       };
 
       ws.onmessage = (e) => {
-        const msg = String(e.data || "");
+        const raw = String(e.data ?? "");
+        const msg = raw.trim();
+
+        if (!msg) return;
 
         if (msg.startsWith("LOG:")){
           addLine(msg, "log");
@@ -477,12 +480,14 @@
           return;
         }
 
-        // JSON de status
-        if (msg.startsWith("{") && msg.endsWith("}")){
-          let d;
+        // tenta extrair um JSON mesmo se vier "lixo" junto
+        const i = msg.indexOf("{");
+        const j = msg.lastIndexOf("}");
+        if (i !== -1 && j !== -1 && j > i){
+          const jsonText = msg.slice(i, j+1);
           try{
-            d = JSON.parse(msg);
-          }catch{
+            const d = JSON.parse(jsonText);
+          } catch (err) {
             addLine("JSON inválido recebido.", "warn");
             return;
           }
@@ -513,7 +518,7 @@
 
         // Qualquer outro texto cai como log “neutro”
         if (msg.trim().length){
-          addLine(msg, "log");
+          console.log(msg);
         }
       };
     }

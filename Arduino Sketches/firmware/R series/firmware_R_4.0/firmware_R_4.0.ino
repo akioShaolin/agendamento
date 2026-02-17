@@ -287,6 +287,9 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
       button{ width: 100%; }
       .grid{ grid-template-columns: 1fr; }
     }
+
+    .metric .value { white-space: pre-line; }
+
   </style>
 </head>
 
@@ -502,7 +505,10 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
       };
 
       ws.onmessage = (e) => {
-        const msg = String(e.data || "");
+        const raw = String(e.data ?? "");
+        const msg = raw.trim();
+
+        if (!msg) return;
 
         if (msg.startsWith("LOG:")){
           addLine(msg, "log");
@@ -513,12 +519,16 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
           return;
         }
 
-        // JSON de status
-        if (msg.startsWith("{") && msg.endsWith("}")){
-          let d;
+        // tenta extrair um JSON mesmo se vier "lixo" junto
+        const i = msg.indexOf("{");
+        const j = msg.lastIndexOf("}");
+        let d;
+        
+        if (i !== -1 && j !== -1 && j > i){
+          const jsonText = msg.slice(i, j+1);
           try{
-            d = JSON.parse(msg);
-          }catch{
+            d = JSON.parse(jsonText);
+          } catch (err) {
             addLine("JSON inválido recebido.", "warn");
             return;
           }
@@ -549,7 +559,7 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
 
         // Qualquer outro texto cai como log “neutro”
         if (msg.trim().length){
-          addLine(msg, "log");
+          console.log(msg);
         }
       };
     }
@@ -587,7 +597,7 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
 #define HR_ACT_PWR_OUT      0x9C8F    // Holding Register Active Power Output. Scale: 100 [W]
 #define HR_EN_ACT_PWR_LIM   0x9D6B    // Holding Register Enable Active Power Limit. [0 - Off, 1 - On]
 #define HR_ACT_PWR_LIM_VL   0x9D6C    // Holding Register Active Power Limit Value. Scale: 0.1 [%]  (0~1100)
-#define HR_SYNC_START_REG   0xA712    // Holding Register to sync the RTC (year, month, day, hour, minute, second)
+#define HR_SYNC_START_REG   0xA710    // Holding Register to sync the RTC (year, month, day, hour, minute, second)
 #define REG_COUNT 1
 
 #define RTC_SYNC_REG_COUNT  6
@@ -599,6 +609,7 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
 // Flags vinculadas aos Tickers para atualização e sincronização do RTC
 
 volatile bool tickFlag = false;
+volatile bool powerFlag = false;
 volatile bool rtcSyncFlag = false;
 
 // -----------------------------------------------------------------------------
@@ -611,7 +622,8 @@ String logs = "";
 
 const uint16_t MAX_LOG_SIZE = 300;
 
-
+uint8_t powerFailCount = 0;
+uint32_t nextPowerTry = 0;
 
 #define POT_INV 100000 //Potência do inversor especificada em 100kW
 #define NUM_PROGRAMS 3
@@ -753,9 +765,7 @@ void rtcSyncTask() {
       if (rtc.isrunning()) {
         rtcSyncState = SYNC_REQUEST;
       } else {
-        if (wsClient != 255) {
-          rtcSyncState = SYNC_ERROR;
-        }
+        rtcSyncState = SYNC_ERROR;
       }
       break;
 
@@ -1020,6 +1030,9 @@ void setup() {
   // Inicia a comunicação serial para Modbus RTU (HardwareSerial).
   Serial.begin(RS485_BAUD);
   rtu.begin(&Serial, DE_RE); 
+
+  // Modbus
+  //rtu.setTimeout(1000);
   
   // WIFI AP
   WiFi.mode(WIFI_AP);
@@ -1087,27 +1100,62 @@ void loop() {
   rtu.task();
   yield();
 
+  // ================= RTC SYNC TEM PRIORIDADE =================
   if (rtcSyncFlag) {
     rtcSyncTask();
-  } else if (tickFlag) {
+    return;
+  }
+
+  // ================= TICK 1s =================
+  if (tickFlag) {
 
     tickFlag = false;
+
     digitalWrite(LED_PIN, digitalRead(LED_PIN) ^ 1);
+
+    // agenda leitura de potência a cada 2 segundos (seu método do LED)
+    if (digitalRead(LED_PIN)) {
+      powerFlag = true;     // NÃO é leitura imediata, só agenda
+    }
 
     DateTime now = rtc.now();
     if (wsClient != 255) handleData(now);
-    
-    // Essa é a linha mais importante do código
-    checkPrograms(now);
 
-    // Leitura da potência do inversor
-    if (!rtu.slave() && wsClient != 255) { // Verifica se não há nenhuma transação em progresso e se está disponível para leitura
-      rtu.readHreg(SLAVE_1_ID, HR_ACT_PWR_OUT, &reg_act_power, REG_COUNT, cb);  
-      power = (float)reg_act_power / 10; // Divide por 10 para ter a unidade como kW
-      while(rtu.slave()) {
-        rtu.task();
-        delay(10);
-      }
+    checkPrograms(now);
+  }
+
+  // ================= LEITURA DA POTÊNCIA =================
+  // roda fora do tick, fora do rtc sync, quando barramento livre
+
+  if (powerFlag && millis() >= nextPowerTry && !rtu.slave() && wsClient != 255) {
+
+    uint32_t t0 = millis();
+
+    rtu.readHreg(SLAVE_1_ID, HR_ACT_PWR_OUT, &reg_act_power, REG_COUNT, cb);
+
+    while (rtu.slave() && (millis() - t0 < 350)) {
+      rtu.task();
+      delay(2);
     }
+
+    if (!rtu.slave()) {
+      // SUCESSO
+      power = (float)reg_act_power / 10;
+      powerFailCount = 0;
+      nextPowerTry = 0;
+      powerFlag = false;   // leitura concluída
+    }
+    else {
+      // TIMEOUT / FALHA
+      powerFailCount++;
+
+      if (powerFailCount >= 2) {
+        nextPowerTry = millis() + 800;   // backoff
+      }
+
+      powerFlag = false;   // tentativa concluída (nova será agendada pelo tick)
+    }
+
+    delay(5);   // pequeno gap ajuda estabilidade RS485
   }
 }

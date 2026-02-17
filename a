@@ -1,0 +1,38 @@
+[33mcommit 7803273e84f5f0e80adccd508ff58f962e563b97[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Pedro Sakuma <pedrosakuma@hotmail.com>
+Date:   Tue Feb 10 09:41:29 2026 -0300
+
+    Atualização do Gateway Modbus e inicio dos estucos com MQQT
+
+[33mcommit 96d365beb2f2c99972d3b76b1b316a51b6a0ccee[m
+Author: Pedro Sakuma <pedrosakuma@hotmail.com>
+Date:   Fri Dec 19 09:39:38 2025 -0300
+
+    Atualização de esquemas eletrônicos, testes utilizando o ED100 com ESP32
+
+[33mcommit 8bfee95a433839e37ef1f49299bfc96900d1698a[m
+Merge: 2079304 7f41def
+Author: Pedro Sakuma <pedrosakuma@hotmail.com>
+Date:   Wed Oct 29 13:50:55 2025 -0300
+
+    Merge branch 'main' of https://github.com/akioShaolin/agendamento
+
+[33mcommit 2079304eff8a9f8b527e448bb01f33c345a86da6[m
+Author: Pedro Sakuma <pedrosakuma@hotmail.com>
+Date:   Wed Oct 29 13:50:38 2025 -0300
+
+    Sincronização 29102025
+
+[33mcommit 7f41def46a847429f786c50505048953c14dcb09[m
+Author: ~Sakuma <66389172+akioShaolin@users.noreply.github.com>
+Date:   Fri Oct 24 15:10:08 2025 -0300
+
+    Add initial README for Injeção Programada project
+    
+    This README provides an overview of the 'Injeção Programada' project, detailing its objectives, functionalities, technologies used, and future steps.
+
+[33mcommit 8aed964cee858ff45652288136b2dbb3aa8b013e[m
+Author: Pedro Sakuma <pedrosakuma@hotmail.com>
+Date:   Thu Oct 23 12:56:47 2025 -0300
+
+    Initial Commit
